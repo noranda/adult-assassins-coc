@@ -1,0 +1,26 @@
+@import 'variables';
+
+// ------------------------------ DOM ------------------------------ //
+
+h1 {
+  font-family: clash;
+  text-align: center;
+}
+
+// ------------------------------ NAVBAR ------------------------------ //
+
+.navbar {
+  background-color: $brand-secondary;
+
+  .navbar-logo {
+    padding: 10px;
+
+    img {
+      width: 200px;
+    }
+  }
+}
+
+.navbar-default .navbar-nav > li > a {
+  color: #eee;
+}

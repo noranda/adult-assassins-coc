@@ -9,7 +9,10 @@ Router.map(->
   @resource('sessions', ->
     @route('new')
   )
+  @route('login')
   @route('register')
+  @route('chatroom')
+  @route('rules')
 
   @resource('dashboard', ->
   )

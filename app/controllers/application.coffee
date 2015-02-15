@@ -16,7 +16,7 @@ ApplicationController = Ember.Controller.extend(
     Ember.run.once(@, @fetchCurrentUser)
   ).observes('session.user_token', 'session.user_email').on('init')
 
-  # makes a call to /api/v1/users/me, which will return the logged in user
+  # makes a call to /users/me, which will return the logged in user
   # then, stores that user in the ember-data store and sets
   # `currentUser` on this route
   fetchCurrentUser: ->

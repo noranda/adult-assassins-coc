@@ -28,7 +28,7 @@ module.exports = function(environment) {
     },
 
     'simple-auth-devise': {
-      serverTokenEndpoint: '/api/v1/sessions',
+      serverTokenEndpoint: '/sessions',
       resourceName: 'user'
     }
   };

@@ -52,7 +52,7 @@ var fontawesomeFonts = pickFiles('bower_components/fontawesome/fonts', {
 //   destDir: '/assets/fontcustom'
 // });
 
-var allTrees = mergeTrees([app.toTree(), bootstrapFonts, fontawesomeFonts, fontcustomFonts]);
+var allTrees = mergeTrees([app.toTree(), bootstrapFonts, fontawesomeFonts]);
 var finalTree = allTrees;
 
 if (app.env === 'production') {
