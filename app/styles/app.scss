@@ -1,0 +1,19 @@
+// Bootstrap
+$icon-font-path: '/assets/bootstrap/';
+@import "bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap";
+
+// Font-Awesome
+$fa-font-path: '/assets/fontawesome';
+@import "bower_components/fontawesome/scss/font-awesome";
+
+// Font Custom
+$fc-font-path: '/assets/fontcustom/';
+@import "vendor/fontcustom/css/ember-fontcustom";
+
+// Partials
+@import "dashboard";
+
+// Custom CSS
+.navbar-logo {
+  padding: 10px;
+}
