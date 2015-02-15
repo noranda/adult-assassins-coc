@@ -2,7 +2,7 @@
 
 module.exports = function(environment) {
   var ENV = {
-    modulePrefix: 'adult-assassins-co-c',
+    modulePrefix: 'adult-assassins-coc',
     environment: environment,
     baseURL: '/',
     locationType: 'auto',
@@ -19,17 +19,24 @@ module.exports = function(environment) {
     },
 
     'simple-auth': {
-      authenticationRoute: 'sessions.new',
       authorizer: 'simple-auth-authorizer:devise',
-      routeAfterAuthentication: 'dashboard',
-      routeIfAlreadyAuthenticated: 'dashboard',
-      sessionPropertyName: 'session',
-      store: 'simple-auth-session-store:local-storage'
+      store: 'simple-auth-session-store:local-storage',
+      localStorageKey: 'adult-assassins-coc:session'
     },
 
     'simple-auth-devise': {
-      serverTokenEndpoint: '/sessions',
-      resourceName: 'user'
+      serverTokenEndpoint: '/api/v1/login',
+      identificationAttributeName: 'user_id'
+    },
+
+    contentSecurityPolicy: {
+      'default-src': "'none'",
+      'script-src': "'self'",
+      'font-src': "'self'",
+      'connect-src': "'self'",
+      'img-src': "'self'",
+      'style-src': "'self' 'unsafe-inline'",
+      'media-src': "'self'"
     }
   };
 
