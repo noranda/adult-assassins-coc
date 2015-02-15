@@ -1,0 +1,46 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+      <form {{action 'register' on='submit'}}>
+        <h2>Register</h2>
+        {{#if errors.length}}
+          <div class="alert alert-danger" role="alert">
+            <p>Failed to register:</p>
+            <ul>
+              {{#each error in errors}}
+                <li>{{error}}</li>
+              {{/each}}
+            </ul>
+          </div>
+        {{/if}}
+        <div class="form-group">
+          <div class="row">
+            <div class="col-sm-6">
+              {{input type="text" value=firstName placeholder="First Name" name="firstName" class="form-control"}}
+            </div>
+            <div class="col-sm-6">
+              {{input type="text" value=lastName placeholder="Last Name" name="lastName" class="form-control"}}
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          {{input type="text" value=username placeholder="CoC Name" name="username" class="form-control"}}
+        </div>
+        <div class="form-group">
+          <div class="row">
+            <div class="col-sm-6">
+              {{input type="password" value=password placeholder="Password" name="password" class="form-control"}}
+            </div>
+            <div class="col-sm-6">
+              {{input type="password" value=passwordConfirmation placeholder="Confirm Password" name="passwordConfirmation" class="form-control"}}
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          {{input type="text" value=email placeholder="Email address" name="email" class="form-control"}}
+        </div>
+        <input type="submit" class="btn btn-primary pull-right" value="Register" />
+      </form>
+    </div>
+  </div>
+</div>
