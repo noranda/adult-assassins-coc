@@ -29,7 +29,7 @@
           "tmp/static_compiler*",
           "tmp/template_compiler*",
           "tmp/tree_merger*"
-        ],
+        ]
     }
   ],
   "settings": {
