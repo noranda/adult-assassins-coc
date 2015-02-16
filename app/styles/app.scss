@@ -1,9 +1,10 @@
+// Variables
+@import "partials/variables";
+
 // Bootstrap
-$icon-font-path: "/assets/bootstrap/";
 @import "bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap";
 
 // Font-Awesome
-$fa-font-path: "/assets/fontawesome";
 @import "bower_components/fontawesome/scss/font-awesome";
 
 // Custom Fonts
@@ -15,12 +16,7 @@ $fa-font-path: "/assets/fontawesome";
   url('/assets/fonts/cc.ttf')  format('truetype'); /* Safari, Android, iOS */
 }
 
-// Font Custom
-// $fc-font-path: '/assets/fontcustom/';
-// @import "vendor/fontcustom/css/ember-fontcustom";
-
 // Partials
 @import "partials/main";
-@import "partials/variables";
 @import "partials/dashboard";
 @import "partials/current-war";

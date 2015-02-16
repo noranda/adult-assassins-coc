@@ -7,5 +7,11 @@ export default Ember.Component.extend({
   isAuthenticated: function() {
     var session = this.get('session');
     return !Ember.isNone(session) && session.get('isAuthenticated');
-  }.property('session')
+  }.property('session.isAuthenticated'),
+
+  actions: {
+    logout: function() {
+      this.sendAction('logout');
+    }
+  }
 });

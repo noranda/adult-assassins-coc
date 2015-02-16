@@ -14,7 +14,7 @@ h1 {
 
 // ------------------------------ NAVBAR ------------------------------ //
 
-.navbar {
+.navbar-static-top {
   background-color: $brand-secondary;
 
   .navbar-logo {
@@ -24,8 +24,8 @@ h1 {
       width: 200px;
     }
   }
-}
 
-.navbar-default .navbar-nav > li > a {
-  color: #eee;
+  .navbar-nav > li > a {
+    color: #eee;
+  }
 }
