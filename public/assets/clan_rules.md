@@ -21,5 +21,3 @@
 
 * We **do not** have a donation ratio. All we ask is that you donate what you can when you can.
 * If a member asks for something specific, please respect that request.
-
-#### Clash on, have some fun and make some new friends!
