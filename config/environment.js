@@ -37,6 +37,14 @@ module.exports = function(environment) {
       'img-src': "'self'",
       'style-src': "'self' 'unsafe-inline'",
       'media-src': "'self'"
+    },
+
+    marked: {
+      js: false,
+      highlightjs: {
+        js: false,
+        css: false
+      }
     }
   };
 

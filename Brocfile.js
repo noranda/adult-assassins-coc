@@ -27,6 +27,9 @@ app.import("bower_components/bootstrap-sass-official/assets/javascripts/bootstra
 app.import("bower_components/numeral/numeral.js");
 app.import("bower_components/numeral/languages.js");
 
+// Marked, library for Markdown
+app.import("bower_components/marked/lib/marked.js");
+
 // moment.js, a time formatting library
 app.import("bower_components/moment/moment.js");
 
