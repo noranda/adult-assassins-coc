@@ -6,9 +6,6 @@ var Router = Ember.Router.extend({
 });
 
 Router.map(function() {
-  this.resource('sessions', function() {
-    this.route('new');
-  });
   this.route('login');
   this.route('register');
   this.route('chatroom');

@@ -25,7 +25,7 @@ module.exports = function(environment) {
     },
 
     'simple-auth-devise': {
-      serverTokenEndpoint: '/api/v1/login',
+      serverTokenEndpoint: '/api/login',
       identificationAttributeName: 'user_id'
     },
 
