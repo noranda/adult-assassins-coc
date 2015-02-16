@@ -2,8 +2,13 @@
 
 // ------------------------------ DOM ------------------------------ //
 
+html, body {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  overflow-y: auto;
+}
+
 h1 {
-  font-family: clash;
+  font-family: clash, Arial, Helvetica, sans-serif;
   text-align: center;
 }
 

@@ -1,0 +1,57 @@
+// ------------------------------ TIMER ------------------------------ //
+
+.timer {
+  font-size: 1.5em;
+}
+
+// ------------------------------ SCORE ------------------------------ //
+
+.score {
+  padding-bottom: 20px;
+
+  .aa-score, .op-score {
+    font-family: clash, Arial, Helvetica, sans-serif;
+    font-size: 2em;
+    color: $brand-tertiary;
+  }
+}
+
+// ------------------------------ TABLE ------------------------------ //
+
+.current-war {
+  font-size: 1.1em;
+
+  .light-row, .dark-row {
+    border-top: 1px solid #ddd;
+  }
+
+  .dark-row {
+    background-color: #f9f9f9;
+  }
+
+  .stars {
+    text-align: right;
+    line-height: 50px;
+  }
+
+  .target {
+    text-align: left;
+    line-height: 50px;
+
+    .target-number {
+      font-size: 1.5em;
+      font-weight: 500;
+      padding-right: 10px;
+    }
+
+    .target-name {
+      font-family: clash, Arial, Helvetica, sans-serif;
+      color: $brand-tertiary;
+    }
+  }
+
+  .player-name {
+    font-family: clash, Arial, Helvetica, sans-serif;
+    color: $brand-tertiary;
+  }
+}
