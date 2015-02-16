@@ -33,6 +33,10 @@ app.import("bower_components/marked/lib/marked.js");
 // moment.js, a time formatting library
 app.import("bower_components/moment/moment.js");
 
+// spin.js
+app.import("bower_components/spin.js/spin.js");
+app.import("bower_components/spin.js/jquery.spin.js");
+
 var bootstrapFonts = pickFiles('bower_components/bootstrap-sass-official/assets/fonts/bootstrap', {
   srcDir: '/',
   destDir: '/assets/bootstrap'

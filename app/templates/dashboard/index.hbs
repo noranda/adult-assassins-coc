@@ -1,151 +1,53 @@
 <div class="container-fluid">
-    {{partial 'dashboard/header'}}
-    <div class="row">
+  {{dashboard-header}}
 
-        <div class="col-lg-3 col-md-6">
-            <div class="panel panel-primary">
-                <div class="panel-heading">
-                    <div class="row">
-                        <div class="col-xs-3">
-                          <i class="fa fa-users fa-5x"></i>
-                        </div>
-                        <div class="col-xs-9 text-right">
-                          <div class="huge">35</div>
-                          <div>Members</div>
-                        </div>
-                    </div>
-                </div>
-                <a href="#">
-                    <div class="panel-footer">
-                        <span class="pull-left">View Details</span>
-                        <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
-                        <div class="clearfix"></div>
-                    </div>
-                </a>
-            </div>
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title"><i class="fa fa-gavel fa-fw"></i> Current War</h3>
         </div>
-
-        <div class="col-lg-3 col-md-6">
-            <div class="panel panel-green">
-                <div class="panel-heading">
-                    <div class="row">
-                        <div class="col-xs-3">
-                          <i class="fa fa-gavel fa-5x"></i>
-                        </div>
-                        <div class="col-xs-9 text-right">
-                          <div class="huge">33</div>
-                          <div>Wars Won</div>
-                        </div>
-                    </div>
-                </div>
-                <a href="#">
-                    <div class="panel-footer">
-                        <span class="pull-left">View Details</span>
-                        <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
-                        <div class="clearfix"></div>
-                    </div>
-                </a>
-            </div>
+        <div class="panel-body current-war">
+          {{partial 'dashboard/current-war'}}
         </div>
-        <div class="col-lg-3 col-md-6">
-            <div class="panel panel-yellow">
-                <div class="panel-heading">
-                    <div class="row">
-                        <div class="col-xs-3">
-                          <i class="fa fa-star fa-5x"></i>
-                        </div>
-                        <div class="col-xs-9 text-right">
-                          <div class="huge">285</div>
-                          <div>Stars Earned</div>
-                        </div>
-                    </div>
-                </div>
-                <a href="#">
-                    <div class="panel-footer">
-                        <span class="pull-left">View Details</span>
-                        <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
-                        <div class="clearfix"></div>
-                    </div>
-                </a>
-            </div>
-        </div>
-        <div class="col-lg-3 col-md-6">
-            <div class="panel panel-red">
-                <div class="panel-heading">
-                    <div class="row">
-                        <div class="col-xs-3">
-                          <i class="fa fa-trophy fa-5x"></i>
-                        </div>
-                        <div class="col-xs-9 text-right">
-                          <div class="huge">85.7<span class="small">%</span></div>
-                          <div>Average Destruction</div>
-                        </div>
-                    </div>
-                </div>
-                <a href="#">
-                    <div class="panel-footer">
-                        <span class="pull-left">View Details</span>
-                        <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
-                        <div class="clearfix"></div>
-                    </div>
-                </a>
-            </div>
-        </div>
+      </div>
     </div>
-    <!-- /.row -->
+  </div>
 
-    <div class="row">
-        <div class="col-lg-12">
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h3 class="panel-title"><i class="fa fa-gavel fa-fw"></i> Current War</h3>
-                </div>
-                <div class="panel-body current-war">
-                  {{partial 'dashboard/current-war'}}
-                </div>
-            </div>
+  <div class="row">
+    <div class="col-lg-4">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title"><i class="fa fa-pie-chart fa-fw"></i> Score</h3>
         </div>
+        <div class="panel-body">
+          <div class="text-right">
+            <a href="#">View Details <i class="fa fa-arrow-circle-right"></i></a>
+          </div>
+        </div>
+      </div>
     </div>
-    <!-- /.row -->
-
-    <div class="row">
-        <div class="col-lg-4">
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h3 class="panel-title"><i class="fa fa-pie-chart fa-fw"></i> Score</h3>
-                </div>
-                <div class="panel-body">
-                    <div class="text-right">
-                        <a href="#">View Details <i class="fa fa-arrow-circle-right"></i></a>
-                    </div>
-                </div>
-            </div>
+    <div class="col-lg-2">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title"><i class="fa fa-trophy fa-fw"></i> Title</h3>
         </div>
-        <div class="col-lg-2">
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h3 class="panel-title"><i class="fa fa-trophy fa-fw"></i> Title</h3>
-                </div>
-                <div class="panel-body">
-
-                    <div class="text-right">
-                        <a href="#">View More Details <i class="fa fa-arrow-circle-right"></i></a>
-                    </div>
-                </div>
-            </div>
+        <div class="panel-body">
+          <div class="text-right">
+            <a href="#">View More Details <i class="fa fa-arrow-circle-right"></i></a>
+          </div>
         </div>
-        <div class="col-lg-6">
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h3 class="panel-title"><i class="fa fa-exclamation fa-fw"></i> Title</h3>
-                </div>
-                <div class="panel-body">
-
-                </div>
-            </div>
-        </div>
+      </div>
     </div>
-    <!-- /.row -->
+    <div class="col-lg-6">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title"><i class="fa fa-exclamation fa-fw"></i> Title</h3>
+        </div>
+        <div class="panel-body">
 
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
-<!-- /.container-fluid -->
