@@ -1,0 +1,40 @@
+{
+  "folders": [
+    {
+      "path": ".",
+      "folder_exclude_patterns":
+        [
+          ".git",
+          "tmp/asset_*",
+          "tmp/caching-writer-*",
+          "tmp/ccfilter-*",
+          "tmp/class-*",
+          "tmp/clean_cssfilter-*",
+          "tmp/coffee_script*",
+          "tmp/concat-tmp*",
+          "tmp/config_loader-*",
+          "tmp/custom_replace-*",
+          "tmp/custom_static_compiler-*",
+          "tmp/es_*",
+          "tmp/esnext_filter-*",
+          "tmp/export_tree*",
+          "tmp/fingerprint-*",
+          "tmp/funnel-*",
+          "tmp/gzip_filter-*",
+          "tmp/jshinter*",
+          "tmp/remover-*",
+          "tmp/replace_*",
+          "tmp/sass_compiler*",
+          "tmp/six_to_five-*",
+          "tmp/static_compiler*",
+          "tmp/template_compiler*",
+          "tmp/tree_merger*"
+        ],
+    }
+  ],
+  "settings": {
+    "tab_size": 2,
+    "translate_tabs_to_spaces": true,
+    "trim_trailing_white_space_on_save": true
+  }
+}
