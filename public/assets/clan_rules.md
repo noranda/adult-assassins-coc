@@ -1,9 +1,25 @@
 # Clan Rules
 
-1. WE MAX OUT OUR TH's BEFORE WE MOVE TO THE NEXT TH...(thats troop lvl's,spells,defences,walls ect...( if in doubt ask the Leader a CO or an elder)
-2. WE ARE RESPECTFUL TO ALL MEMBERS
-3. YOUR 1st ATTACK IS YOUR MIRROR BASE ON THE OPPOSITIONS CLAN (ie;....if you're #10 on the war map...you attack #10...#15 attacks #15 ect ect...) THEN HOLD UNTIL AFTER THE 12hr MARK FOR 2nd ATTACK WHEN THE LEADER OR A CO WILL GIVE YOU YOUR NEXT ATTACK NUMBER... #### FIRST ATTACK SHOULD BE DONE BEFORE THE 12th HOUR ####
-4. USE BOTH ATTACKS IN WAR
-5. **# ONLY DESIGNATED MEMBERS ARE TO FILL WAR CC's.#** (clan mail will be sent for the donators as it will change each war,where they will be given set numbers to fill...this is a clan effort done by the HIGHER TH's ONLY)
-6. WE DO NOT HAVE A DONATION RATIO...JUST WHAT YOU CAN WHEN YOU CAN IS ALL THAT'S ASKED OF ALL MEMBERS...( if you have a specific request..state it in your request as all members are encouraged to donate and do so...)
-7. CLASH ON HAVE FUN AND MAKE SOME NEW FRIENDS....
+#### Clan Conduct
+
+* **Be respectful** to all members
+
+#### Town Hall Upgrades
+
+* You must max out your base before upgrading to the next town hall level
+  * This includes upgrading all: Walls, Troops, Spells, Defenses, Gold Mines, Elixir Collectors, Gold Storages, Elixir Storages
+* When in doubt, ask a Leader if you can upgrade
+
+#### War Tactics
+
+* Your first attack should be done within the first **10 hours** of war (before the clock hits 14:00 remaining). Your second attack should be done after the **12 hour** mark. When you are ready to do your second attack ask a Leader of Co-Leader who to attack.
+* Your first attack should be against your mirror base on the oppositions clan. For example, if you are #15 then you attack #15, if you are #33 you attack #33, etc.
+* You must use **both attacks** in war, no excuses.
+* Only **designated members** are to fill War CC's. Clan Mail will be sent for each war informing who the donors are and who they will donate to. This is a clan effort from the higher level members to ensure the best possible defense for each war.
+
+#### Donations
+
+* We **do not** have a donation ratio. All we ask is that you donate what you can when you can.
+* If a member asks for something specific, please respect that request.
+
+#### Clash on, have some fun and make some new friends!
