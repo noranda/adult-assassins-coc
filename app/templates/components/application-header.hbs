@@ -1,4 +1,4 @@
-<nav class="navbar navbar-default" role="navigation">
+<nav class="navbar navbar-default navbar-static-top" role="navigation">
   <div class="container-fluid">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-header-collapse">
@@ -11,25 +11,25 @@
     </div>
     <div class="collapse navbar-collapse" id="navbar-header-collapse">
       <ul class="nav navbar-nav navbar-right">
-        {{#if session.isAuthenticated}}
-          {{#view 'active-item-link'}}
+        {{#if isAuthenticated}}
+          {{#active-li}}
             {{#link-to 'dashboard'}}
               <i class="fa fa-tachometer fa-fw"></i>
               Dashboard
             {{/link-to}}
-          {{/view}}
-          {{#view 'active-item-link'}}
+          {{/active-li}}
+          {{#active-li}}
             {{#link-to 'chatroom'}}
               <i class="fa fa-comments fa-fw"></i>
               Chat Room
             {{/link-to}}
-          {{/view}}
-          {{#view 'active-item-link'}}
+          {{/active-li}}
+          {{#active-li}}
             {{#link-to 'rules'}}
               <i class="fa fa-list-ol fa-fw"></i>
               Clan Rules
             {{/link-to}}
-          {{/view}}
+          {{/active-li}}
           <li>
             <a href="#" {{action 'invalidateSession'}}>
               <i class="fa fa-sign-out fa-fw"></i>
@@ -37,12 +37,12 @@
             </a>
           </li>
         {{else}}
-          {{#view 'active-item-link'}}
+          {{#active-li}}
             {{#link-to 'sessions.new'}}Log In{{/link-to}}
-          {{/view}}
-          {{#view 'active-item-link'}}
+          {{/active-li}}
+          {{#active-li}}
             {{#link-to 'register'}}Register{{/link-to}}
-          {{/view}}
+          {{/active-li}}
         {{/if}}
       </ul>
     </div>
