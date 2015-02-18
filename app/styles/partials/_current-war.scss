@@ -2,6 +2,7 @@
 
 .timer {
   font-size: 1.5em;
+  color: $brand-red;
 }
 
 // ------------------------------ SCORE ------------------------------ //
@@ -47,11 +48,17 @@
     .target-name {
       font-family: clash, Arial, Helvetica, sans-serif;
       color: $brand-primary;
+      font-size: 1.2em;
     }
   }
 
-  .player-name {
-    font-family: clash, Arial, Helvetica, sans-serif;
-    color: $brand-primary;
+  .attacker {
+    padding: 0;
+
+    .player-name {
+      font-family: clash, Arial, Helvetica, sans-serif;
+      color: $brand-primary;
+      font-size: 0.8em;
+    }
   }
 }

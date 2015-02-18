@@ -1,7 +1,8 @@
-/* Custom Colored Panels */
+// ------------------------------ PANELS ------------------------------ //
 
 .huge {
-  font-size: 40px;
+  font-size: 50px;
+  font-weight: 200;
 }
 
 .panel-green {
@@ -57,6 +58,8 @@
 .panel-yellow a:hover {
   color: #df8a13;
 }
+
+// ------------------------------ CURRENT WAR ------------------------------ //
 
 .current-war {
 text-align: center;
