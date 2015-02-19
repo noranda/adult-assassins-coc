@@ -1,0 +1,8 @@
+<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+  {{itemPrompt}} <span class="caret"></span>
+</button>
+<ul class="dropdown-menu" role="menu">
+  {{#each item in itemsList}}
+    <li {{bind-attr class="item.selected:active"}}><a href="#" {{action "selectItem" item}}>{{item.content.name}}</a></li>
+  {{/each}}
+</ul>
