@@ -45,3 +45,34 @@ h4 {
 .fa-padded {
   padding: 10px;
 }
+
+// ------------------------------ MODALS ------------------------------ //
+
+.modal-title {
+  font-family: clash, Arial, Helvetica, sans-serif;
+  text-align: center;
+}
+
+.modal-body {
+
+  .control-label {
+    font-weight: 400;
+  }
+
+  .short-label {
+    padding: 0 15px;
+  }
+
+  .radio-label {
+    text-align: left;
+    padding-left: 10px;
+  }
+
+  button.dropdown-toggle {
+    width: 119px;
+  }
+
+  .dropdown-menu {
+    min-width: 119px;
+  }
+}

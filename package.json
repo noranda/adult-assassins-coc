@@ -43,5 +43,8 @@
     "glob": "4.3.5",
     "http-proxy": "1.8.1",
     "morgan": "1.5.1"
+  },
+  "dependencies": {
+    "ember-radio-buttons": "^3.0.1"
   }
 }
