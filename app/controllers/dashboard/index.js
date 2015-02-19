@@ -55,6 +55,10 @@ export default Ember.Controller.extend({
       currentWarTimer = endTime - currentTime;
       warObj.endTime.save();
       // return runTimer();
+    },
+
+    declareWar: function() {
+      this.get('controllers.application').send('openModal', 'modals/declare-war');
     }
   }
 });

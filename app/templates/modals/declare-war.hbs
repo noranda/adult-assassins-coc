@@ -1,0 +1,56 @@
+{{#bootstrap-modal
+  formClass="form-horizontal"
+  close="closeModal"
+  submitBtnTitle="Declare War"
+  okBtnTitle="Cancel"
+  title="Declare War"
+  fade=true
+  submitBtnClass="btn-danger"}}
+
+  <div class="form-group">
+    <label for="opposingClanName" class="col-sm-3 control-label">Opposing Clan</label>
+    <div class="col-sm-9">
+      {{input type="text" classNames="form-control" elementId="opposingClanName"}}
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="col-sm-3 control-label">
+      War Status
+    </label>
+    <div class="col-sm-9">
+      <label class="radio-inline">
+        <input type="radio" class="radio" />
+        Preparation Day
+      </label>
+      <label class="radio-inline">
+        <input type="radio" class="radio" />
+        In War
+      </label>
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="col-sm-3 control-label">
+      Time Remaining
+    </label>
+    <div class="col-sm-3">
+      <div class="input-group">
+        {{input type="text" classNames="form-control" maxlength=2 placeholder="0"}}
+        <span class="input-group-addon" id="basic-addon2">hours</span>
+      </div>
+    </div>
+    <div class="col-sm-3">
+      <div class="input-group">
+        {{input type="text" classNames="form-control" maxlength=2 placeholder="0"}}
+        <span class="input-group-addon" id="basic-addon2">minutes</span>
+      </div>
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="col-sm-3 control-label">
+      War Size
+    </label>
+    <div class="col-sm-9">
+      <select></select>
+    </div>
+  </div>
+{{/bootstrap-modal}}

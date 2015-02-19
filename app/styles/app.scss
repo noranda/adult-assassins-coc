@@ -16,6 +16,10 @@
   url('/assets/fonts/cc.ttf')  format('truetype'); /* Safari, Android, iOS */
 }
 
+.clash {
+  font-family: clash;
+}
+
 // Partials
 @import "partials/main";
 @import "partials/dashboard";
