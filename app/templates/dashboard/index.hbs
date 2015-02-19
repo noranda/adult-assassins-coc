@@ -11,16 +11,16 @@
           {{#if isInWar}}
             {{partial 'dashboard/current-war'}}
           {{else}}
-            <h1>Adult Assassins</h1>
-            <h2 class="clash">There is peace throughout the land.</h2>
+            <h4 class="clash">There is peace throughout the land.</h4>
             <button class="btn btn-danger btn-lg" {{action "declareWar"}}>Declare War</button>
           {{/if}}
         </div>
       </div>
     </div>
   </div>
+</div>
 
-  <div class="row">
+  {{!-- <div class="row">
     <div class="col-lg-4">
       <div class="panel panel-default">
         <div class="panel-heading">
@@ -57,3 +57,4 @@
     </div>
   </div>
 </div>
+ --}}

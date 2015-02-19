@@ -13,6 +13,7 @@
       {{input type="text" classNames="form-control" elementId="opposingClanName"}}
     </div>
   </div>
+
   <div class="form-group">
     <label class="col-sm-3 control-label">
       War Status
@@ -28,7 +29,28 @@
       </label>
     </div>
   </div>
+
+  <div class="btn-group">
+    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+      War Size <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu" role="menu">
+      <li><a href="#">50 x 50</a></li>
+      <li><a href="#">45 x 45</a></li>
+      <li><a href="#">40 x 40</a></li>
+    </ul>
+  </div>
+
   <div class="form-group">
+    <label class="col-sm-3 control-label">
+      War Size
+    </label>
+    <div class="col-sm-9">
+      <select></select>
+    </div>
+  </div>
+
+    <div class="form-group">
     <label class="col-sm-3 control-label">
       Time Remaining
     </label>
@@ -43,14 +65,6 @@
         {{input type="text" classNames="form-control" maxlength=2 placeholder="0"}}
         <span class="input-group-addon" id="basic-addon2">minutes</span>
       </div>
-    </div>
-  </div>
-  <div class="form-group">
-    <label class="col-sm-3 control-label">
-      War Size
-    </label>
-    <div class="col-sm-9">
-      <select></select>
     </div>
   </div>
 {{/bootstrap-modal}}
