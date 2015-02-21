@@ -10,6 +10,7 @@ export default Ember.Component.extend({
   submitBtnTitle: null,
   formClass: '',
   submitBtnClass: 'btn-primary',
+  disableSubmitBtn: false,
 
   displaySubmitBtn: Ember.computed.notEmpty('submitBtnTitle'),
   displayCloseBtn: Ember.computed.notEmpty('okBtnTitle'),

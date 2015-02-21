@@ -5,6 +5,7 @@
   okBtnTitle="Cancel"
   title="Schedule War"
   fade=true
+  disableSubmitBtn=isSaving
   submitBtnClass="btn-primary"
   submit="submit"}}
 
@@ -25,13 +26,13 @@
     </label>
     <div class="col-sm-3">
       <div class="input-group">
-        {{input value=warHours type="text" classNames="form-control" maxlength=2 placeholder="0"}}
+        {{input value=prepareHours type="text" classNames="form-control" maxlength=2 placeholder="0"}}
         <span class="input-group-addon" id="basic-addon2">hrs</span>
       </div>
     </div>
     <div class="col-sm-3">
       <div class="input-group">
-        {{input value=warMinutes type="text" classNames="form-control" maxlength=2 placeholder="0"}}
+        {{input value=prepareMinutes type="text" classNames="form-control" maxlength=2 placeholder="0"}}
         <span class="input-group-addon" id="basic-addon2">min</span>
       </div>
     </div>
