@@ -2,6 +2,15 @@ import Ember from 'ember';
 
 var { isEmpty } = Ember;
 
+function saveSuccessFn(json) {
+  this.get('store').pushPayload('war', json);
+  this.send('close');
+}
+
+function saveErrorFn() {
+  this.set('errors', ['An error occurred when attempting to save the war, please try again.']);
+}
+
 export default Ember.Controller.extend({
   opposingClanName: null,
   opposingClanTag: null,
@@ -24,14 +33,10 @@ export default Ember.Controller.extend({
   warSizes: function() {
     var sizes = [];
     for (var i = 10; i <= 50; i += 5) {
-      sizes.push(`${i} vs. ${i}`);
+      sizes.push({ value: i, name: `${i} vs. ${i}` });
     }
     return sizes;
   }.property(),
-
-  proxiedWarSizes: Ember.computed.map('warSizes', function(item) {
-    return { value: item, name: item };
-  }),
 
   _reset: function() {
     this.setProperties({
@@ -79,7 +84,27 @@ export default Ember.Controller.extend({
 
     submit: function() {
       if (this._validate()) {
-        // save
+        var applicationAdapter = this.container.lookup('adapter:application');
+
+        //jscs:disable
+        var query = {
+          opposing_clan_name: this.get('opposingClanName'),
+          opposing_clan_tag: this.get('opposingClanTag'),
+          war_status: this.get('warStatus'),
+          war_size: this.get('selectedWarSize'),
+          hours: this.get('warHours'),
+          minutes: this.get('warMinutes')
+        };
+        //jscs:enable
+
+        Ember.$.ajax({
+          data: {
+            war: query
+          },
+          dataType: 'json',
+          type: 'POST',
+          url: `${applicationAdapter.get('namespace')}/wars`
+        }).then(saveSuccessFn.bind(this), saveErrorFn.bind(this));
       }
     }
   }
