@@ -5,12 +5,31 @@
   okBtnTitle="Cancel"
   title="Declare War"
   fade=true
-  submitBtnClass="btn-danger"}}
+  submitBtnClass="btn-danger"
+  submit="submit"}}
+
+  {{#if errors.length}}
+    <div class="alert alert-danger">
+      <p><strong>Errors:</strong></p>
+      <ul>
+        {{#each error in errors}}
+          <li>{{error}}</li>
+        {{/each}}
+      </ul>
+    </div>
+  {{/if}}
 
   <div class="form-group">
     <label for="opposingClanName" class="col-sm-3 control-label">Opposing Clan:</label>
     <div class="col-sm-9">
-      {{input type="text" classNames="form-control" elementId="opposingClanName"}}
+      {{input value=opposingClanName type="text" classNames="form-control" elementId="opposingClanName"}}
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="opposingClanTag" class="col-sm-3 control-label">Opposing Clan Tag:</label>
+    <div class="col-sm-9">
+      {{input value=opposingClanTag type="text" classNames="form-control" elementId="opposingClanTag"}}
     </div>
   </div>
 
@@ -19,11 +38,11 @@
       War Status:
     </label>
     <div class="col-sm-9">
-      <label for="warStatus" class="col-sm-5 short-label">
+      <label class="col-sm-5 short-label">
         {{radio-button value='preparation-day' checked=warStatus}}
         <span class="radio-label">Preparation</span>
       </label>
-      <label for="warStatus" class="col-sm-5">
+      <label class="col-sm-5">
         {{radio-button value='in-war' checked=warStatus}}
         <span class="radio-label">In War</span>
       </label>
@@ -50,13 +69,13 @@
     </label>
     <div class="col-sm-3">
       <div class="input-group">
-        {{input type="text" classNames="form-control" maxlength=2 placeholder="0"}}
+        {{input value=warHours type="text" classNames="form-control" maxlength=2 placeholder="0"}}
         <span class="input-group-addon" id="basic-addon2">hrs</span>
       </div>
     </div>
     <div class="col-sm-3">
       <div class="input-group">
-        {{input type="text" classNames="form-control" maxlength=2 placeholder="0"}}
+        {{input value=warMinutes type="text" classNames="form-control" maxlength=2 placeholder="0"}}
         <span class="input-group-addon" id="basic-addon2">min</span>
       </div>
     </div>
