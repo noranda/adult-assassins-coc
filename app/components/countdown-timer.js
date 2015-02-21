@@ -3,6 +3,15 @@ import Ember from 'ember';
 var { run } = Ember;
 var { moment } = window;
 
+function zeroIt(str) {
+  str = `${str}`;
+  if (str.length < 2) {
+    str = `0${str}`;
+  }
+
+  return str;
+}
+
 export default Ember.Component.extend({
   to: null,
   clock: null,
@@ -25,7 +34,7 @@ export default Ember.Component.extend({
     var now = moment();
     var diff = moment(endDate).diff(now);
     var duration = moment.duration(diff, 'milliseconds');
-    var clock = `${duration.hours()}:${duration.minutes()}:${duration.seconds()}`;
+    var clock = `${zeroIt(duration.hours())}:${zeroIt(duration.minutes())}:${zeroIt(duration.seconds())}`;
 
     this.set('clock', clock);
 

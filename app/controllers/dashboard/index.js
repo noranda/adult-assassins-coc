@@ -71,6 +71,15 @@ export default Ember.Controller.extend({
 
     scheduleWar: function() {
       this.get('controllers.application').send('openModal', 'modals/schedule-war');
+    },
+
+    makePeace: function() {
+      var currentTimer = this.get('currentTimer');
+      if (currentTimer && confirm('Are you sure you want to make peace? (cancels war search timer)')) {
+        currentTimer.destroyRecord().catch(() => {
+          currentTimer.rollback();
+        });
+      }
     }
   }
 });

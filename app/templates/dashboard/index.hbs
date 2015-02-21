@@ -14,6 +14,7 @@
             <h4 class="clash">{{warText}}</h4>
             {{#if currentTimer}}
               {{countdown-timer to=currentTimer.endDate}}
+              <button class="btn btn-primary btn-lg" {{action "makePeace"}}>Make Peace</button>
             {{else}}
               <button class="btn btn-primary btn-lg" {{action "scheduleWar"}}>Schedule War</button>
             {{/if}}
