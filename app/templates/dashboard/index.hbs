@@ -12,6 +12,7 @@
             {{partial 'dashboard/current-war'}}
           {{else}}
             <h4 class="clash">There is peace throughout the land.</h4>
+            <button class="btn btn-primary btn-lg" {{action "scheduleWar"}}>Schedule War</button>
             <button class="btn btn-danger btn-lg" {{action "declareWar"}}>Declare War</button>
           {{/if}}
         </div>

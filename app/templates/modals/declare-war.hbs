@@ -20,24 +20,27 @@
   {{/if}}
 
   <div class="form-group">
-    <label for="opposingClanName" class="col-sm-3 control-label">Opposing Clan:</label>
-    <div class="col-sm-9">
+    <label for="opposingClanName" class="col-sm-4 control-label">Opposing Clan:</label>
+    <div class="col-sm-6">
       {{input value=opposingClanName type="text" classNames="form-control" elementId="opposingClanName"}}
     </div>
   </div>
 
   <div class="form-group">
-    <label for="opposingClanTag" class="col-sm-3 control-label">Opposing Clan Tag:</label>
-    <div class="col-sm-9">
-      {{input value=opposingClanTag type="text" classNames="form-control" elementId="opposingClanTag"}}
+    <label for="opposingClanTag" class="col-sm-4 control-label">Opposing Clan Tag:</label>
+    <div class="col-sm-6">
+      <div class="input-group">
+        <span class="input-group-addon" id="basic-addon1">#</span>
+        {{input value=opposingClanTag type="text" classNames="form-control" elementId="opposingClanTag"}}
+      </div>
     </div>
   </div>
 
   <div class="form-group">
-    <label class="col-sm-3 control-label short-label">
+    <label class="col-sm-4 control-label short-label">
       War Status:
     </label>
-    <div class="col-sm-9">
+    <div class="col-sm-8">
       <label class="col-sm-5 short-label">
         {{radio-button value='preparation-day' checked=warStatus}}
         <span class="radio-label">Preparation</span>
@@ -50,16 +53,16 @@
   </div>
 
   <div class="form-group">
-    <label class="col-sm-3 control-label">
+    <label class="col-sm-4 control-label">
       War Size:
     </label>
-    <div class="col-sm-9">
+    <div class="col-sm-8">
       {{btn-group items=proxiedWarSizes selectedItem=proxiedSelectedWarSize defaultPrompt="Select Size"}}
     </div>
   </div>
 
     <div class="form-group">
-    <label class="col-sm-3 control-label">
+    <label class="col-sm-4 control-label">
       Time
       {{#if preparationDay}}
         to war:

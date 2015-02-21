@@ -59,6 +59,10 @@ export default Ember.Controller.extend({
 
     declareWar: function() {
       this.get('controllers.application').send('openModal', 'modals/declare-war');
+    },
+
+    scheduleWar: function() {
+      this.get('controllers.application').send('openModal', 'modals/schedule-war');
     }
   }
 });

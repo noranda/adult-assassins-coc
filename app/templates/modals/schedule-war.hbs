@@ -1,0 +1,39 @@
+{{#bootstrap-modal
+  formClass="form-horizontal"
+  close="close"
+  submitBtnTitle="Schedule War"
+  okBtnTitle="Cancel"
+  title="Schedule War"
+  fade=true
+  submitBtnClass="btn-primary"
+  submit="submit"}}
+
+  {{#if errors.length}}
+    <div class="alert alert-danger">
+      <p><strong>Errors:</strong></p>
+      <ul>
+        {{#each error in errors}}
+          <li>{{error}}</li>
+        {{/each}}
+      </ul>
+    </div>
+  {{/if}}
+
+  <div class="form-group">
+    <label class="col-sm-4 control-label">
+      Time until preparation:
+    </label>
+    <div class="col-sm-3">
+      <div class="input-group">
+        {{input value=warHours type="text" classNames="form-control" maxlength=2 placeholder="0"}}
+        <span class="input-group-addon" id="basic-addon2">hrs</span>
+      </div>
+    </div>
+    <div class="col-sm-3">
+      <div class="input-group">
+        {{input value=warMinutes type="text" classNames="form-control" maxlength=2 placeholder="0"}}
+        <span class="input-group-addon" id="basic-addon2">min</span>
+      </div>
+    </div>
+  </div>
+{{/bootstrap-modal}}

@@ -78,7 +78,6 @@ export default Ember.Controller.extend({
     },
 
     submit: function() {
-      console.debug('submit was called');
       if (this._validate()) {
         // save
       }
