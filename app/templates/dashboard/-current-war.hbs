@@ -1,5 +1,9 @@
 <div>
-  <h1>Adult Assassins <span class="small">vs </span>{{currentWar.opposingClan.name}}</h1>
+  <h1>
+    <span class="our-clan" {{action 'viewOurClan'}}>Adult Assassins</span>
+    <span class="small">vs </span>
+    <span class="opposing-clan" {{action 'viewOpposingClan'}}>{{currentWar.opposingClan.name}}</span>
+  </h1>
 
   <div class="timer">
     {{countdown-timer war=currentWar to=currentWar.endDate}}

@@ -1,0 +1,13 @@
+<div class="col-sm-2 attacker">
+  <form class="form-inline" {{action 'saveAttacker' on='submit'}}>
+    <div class="form-group">
+      <span class="attacker-name">
+        {{input type="text" class="form-control" value=warPlayer.player.name placeholder="+" focus-out="savePlayer"}}
+      </span>
+    </div>
+  </form>
+{{!--   <br/>
+  <i class="fa fa-star"></i>
+  <i class="fa fa-star"></i>
+  <i class="fa fa-star-o"></i> --}}
+</div>

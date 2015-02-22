@@ -22,6 +22,15 @@
 .current-war {
   font-size: 1.1em;
 
+  .opposing-clan {
+    color: $brand-primary;
+    // text-shadow:
+    //   2px -2px 0 $brand-yellow,
+    //   2px -2px 0 $brand-yellow,
+    //   -2px 2px 0 $brand-yellow,
+    //   2px 2px 0  $brand-yellow;
+  }
+
   .war-player-row {
     border-top: 1px solid #ddd;
   }
@@ -57,10 +66,16 @@
   .attacker {
     padding: 0;
 
-    .player-name {
+    .attacker-name {
       font-family: clash, Arial, Helvetica, sans-serif;
       color: $brand-primary;
       font-size: 0.8em;
     }
+  }
+
+  .add-attacker {
+    margin-top: 12px;
+    font-size: 1.2em;
+    padding: 0 5px;
   }
 }

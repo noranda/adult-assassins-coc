@@ -15,7 +15,7 @@ export default Ember.Component.extend ({
       var player = warPlayer.get('player');
       var playerName = player.get('name');
 
-      if (Ember.isEmpty(playerName) && player.get('isNew')) { return; }
+      if ((Ember.isEmpty(playerName) && player.get('isNew')) || (!player.get('isNew') && !player.get('isDirty'))) { return; }
 
       var errorMessage = `Failed to save player ${player.get('name')}, please try again.`;
       var successMessage = `Saved player ${player.get('name')}.`;
@@ -24,7 +24,6 @@ export default Ember.Component.extend ({
         if (warPlayer.get('isNew')) {
           warPlayer.save().then(function() {
             Notify.success(successMessage);
-            Notify.alert(errorMessage);
           }, function() {
             Notify.alert(errorMessage);
           });
@@ -34,6 +33,10 @@ export default Ember.Component.extend ({
       }, () => {
         Notify.alert(errorMessage);
       });
+    },
+
+    addAttacker: function() {
+      // var attacker = this.
     }
   }
 });

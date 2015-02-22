@@ -44,7 +44,7 @@ export default Ember.Controller.extend({
     }
 
     return sortedTargets;
-  }.property('warTargets.length', 'currentWar.warSize'),
+  }.property('currentWar', 'currentWar.warSize'),
 
   isInWar: function() {
     return Ember.getWithDefault(this, 'currentWar.isOngoing', false);
@@ -78,6 +78,14 @@ export default Ember.Controller.extend({
           currentTimer.rollback();
         });
       }
+    },
+
+    viewOurClan: function() {
+
+    },
+
+    viewOpposingClan: function() {
+
     }
   }
 });
