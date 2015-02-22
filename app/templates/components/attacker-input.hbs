@@ -1,0 +1,8 @@
+{{input class="typeahead form-control" placeholder=placeHolderText value=selectedVal elementId=typeaheadId}}
+<ul class="tt-suggestions dropdown-menu clearfix" role="menu" {{bind-attr style=suggestStyles}}>
+  {{#each result in suggestions}}
+    <li {{bind-attr class=":tt-suggestion result.highlight:active"}}>
+      <a href="#" style="white-space: normal;" {{action 'selectItem' result}}>{{result.content.player.name}}</a>
+    </li>
+  {{/each}}
+</ul>

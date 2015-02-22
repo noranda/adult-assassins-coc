@@ -38,6 +38,10 @@ app.import("bower_components/ember-cli-moment-shim/moment-shim.js");
 app.import("bower_components/spin.js/spin.js");
 app.import("bower_components/spin.js/jquery.spin.js");
 
+// fuse.js, fuzzy searching
+app.import("bower_components/fuse.js/src/fuse.js");
+app.import("vendor/fusejs-shim.js");
+
 var bootstrapFonts = pickFiles('bower_components/bootstrap-sass-official/assets/fonts/bootstrap', {
   srcDir: '/',
   destDir: '/assets/bootstrap'

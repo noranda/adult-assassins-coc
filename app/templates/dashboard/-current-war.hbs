@@ -20,7 +20,7 @@
 
   <div class="container current-war">
     {{#each target in targetList}}
-      {{war-player-row warPlayer=target openModal='openModal'}}
+      {{war-player-row war=currentWar warPlayer=target openModal='openModal'}}
     {{/each}}
 
 {{!--     <div class="row">

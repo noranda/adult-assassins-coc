@@ -3,7 +3,7 @@
   close="close"
   submitBtnTitle="Add Attacker"
   okBtnTitle="Cancel"
-  title="Add Attacker"
+  title=modalTitle
   fade=true
   submitBtnClass="btn-primary"
   submit="submit"}}
@@ -22,7 +22,7 @@
   <div class="form-group">
     <label for="attackerName" class="col-sm-4 control-label">Attacker name:</label>
     <div class="col-sm-6">
-      {{input value=attackerName type="text" classNames="form-control" elementId="attackerName"}}
+      {{attacker-input placeHolderText="attacker" miniumCharLength=1 debounceTime=200 selectedFunction="selectAttacker" typeaheadId="attackerName" attackersList=attackersList selectedWarPlayer=selectedWarPlayer}}
     </div>
   </div>
 {{/bootstrap-modal}}

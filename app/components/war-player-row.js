@@ -3,6 +3,7 @@ import Notify from 'ember-notify';
 
 export default Ember.Component.extend ({
   classNames: ['row', 'war-player-row'],
+  war: null,
   warPlayer: null,
 
   formElementId: function() {
@@ -11,9 +12,9 @@ export default Ember.Component.extend ({
 
   placeholderText: function() {
     if (this.get('warPlayer.friendly')) {
-      return "friend";
+      return 'friend';
     } else {
-      return "foe";
+      return 'foe';
     }
   }.property('warPlayer.friendly'),
 
@@ -44,7 +45,10 @@ export default Ember.Component.extend ({
     },
 
     addAttacker: function() {
-      this.sendAction('openModal', 'modals/attacker');
+      this.sendAction('openModal', 'modals/attacker', {
+        war: this.get('war'),
+        warPlayer: this.get('warPlayer')
+      });
     }
   }
 });
