@@ -5,6 +5,7 @@ export default Ember.Component.extend ({
   classNames: ['row', 'war-player-row'],
   war: null,
   warPlayer: null,
+  attackerList: Ember.computed.oneWay('warPlayer.defenses'),
 
   formElementId: function() {
     return `position-${this.get('warPlayer.position')}`;
@@ -17,6 +18,15 @@ export default Ember.Component.extend ({
       return 'foe';
     }
   }.property('warPlayer.friendly'),
+
+  maxStars: function() {
+    var stars = this.get('warPlayer.defenses').mapBy('score').filter(function(score) { return !Ember.isNone(score); });
+    if (stars.length === 0) {
+      return 0;
+    }
+
+    return Math.max.apply(Math, stars);
+  }.property('warPlayer.defenses.@each.score'),
 
   actions: {
     savePlayer: function() {

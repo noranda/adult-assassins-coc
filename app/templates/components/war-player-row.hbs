@@ -1,5 +1,5 @@
 <div class="col-sm-1 stars">
-
+  {{stars-display stars=maxStars}}
 </div>
 <div class="col-sm-3 target">
   <form class="form-inline" {{action 'savePlayer' on='submit'}}>
@@ -17,7 +17,7 @@
 </div>
 
 {{#each attacker in attackerList}}
-  {{attacker-log warPlayer=attacker}}
+  {{attacker-log attack=attacker}}
 {{/each}}
 
 <div class="col-sm-1">
