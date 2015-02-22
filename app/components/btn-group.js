@@ -13,11 +13,15 @@ export default Ember.Component.extend({
 
   itemPrompt: function() {
     var item = this.get('selectedItem');
+    var name = get(item, 'name');
+    if (get(name, 'string')) {
+      name = get(name, 'string');
+    }
     if (this.get('alwaysUseDefaultPrompt') || Ember.isNone(item)) {
       return this.get('defaultPrompt');
     }
 
-    return (this.get('selectedPrompt') || "").fmt(get(item, 'name'), this.get('defaultPrompt'));
+    return (this.get('selectedPrompt') || "").fmt(name, this.get('defaultPrompt')).htmlSafe();
   }.property('defaultPrompt', 'alwaysUseDefaultPrompt', 'selectedPrompt', 'selectedItem.name'),
 
   itemsList: function() {
