@@ -1,7 +1,7 @@
 import Ember from 'ember';
+import moment from 'moment';
 
 var { run } = Ember;
-var { moment } = window;
 
 function zeroIt(str) {
   str = `${str}`;

@@ -32,6 +32,7 @@ app.import("bower_components/marked/lib/marked.js");
 
 // moment.js, a time formatting library
 app.import("bower_components/moment/moment.js");
+app.import("bower_components/ember-cli-moment-shim/moment-shim.js");
 
 // spin.js
 app.import("bower_components/spin.js/spin.js");

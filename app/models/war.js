@@ -1,6 +1,5 @@
 import DS from 'ember-data';
-
-var { moment } = window;
+import moment from 'moment';
 
 export default DS.Model.extend({
   startDate: DS.attr('date'),
