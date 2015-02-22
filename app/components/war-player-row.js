@@ -1,6 +1,5 @@
 import Ember from 'ember';
-
-var { noty } = window;
+import Notify from 'ember-notify';
 
 export default Ember.Component.extend ({
   classNames: ['row', 'war-player-row'],
@@ -18,18 +17,22 @@ export default Ember.Component.extend ({
 
       if (Ember.isEmpty(playerName) && player.get('isNew')) { return; }
 
-      var notyError = { text: `Failed to save player ${player.get('name')}, please try again`, type: 'error' };
+      var errorMessage = `Failed to save player ${player.get('name')}, please try again.`;
+      var successMessage = `Saved player ${player.get('name')}.`;
 
       this.get('warPlayer.player').save().then(() => {
         if (warPlayer.get('isNew')) {
           warPlayer.save().then(function() {
-            // noty({ text: `Saved player ${player.get('name')}`, type: 'success' });
+            Notify.success(successMessage);
+            Notify.alert(errorMessage);
           }, function() {
-            noty(notyError);
+            Notify.alert(errorMessage);
           });
+        } else {
+          Notify.success(successMessage);
         }
       }, () => {
-        noty(notyError);
+        Notify.alert(errorMessage);
       });
     }
   }
