@@ -1,0 +1,28 @@
+{{#bootstrap-modal
+  formClass="form-horizontal"
+  close="close"
+  submitBtnTitle="Add Attacker"
+  okBtnTitle="Cancel"
+  title="Add Attacker"
+  fade=true
+  submitBtnClass="btn-primary"
+  submit="submit"}}
+
+  {{#if errors.length}}
+    <div class="alert alert-danger">
+      <p><strong>Errors:</strong></p>
+      <ul>
+        {{#each error in errors}}
+          <li>{{error}}</li>
+        {{/each}}
+      </ul>
+    </div>
+  {{/if}}
+
+  <div class="form-group">
+    <label for="attackerName" class="col-sm-4 control-label">Attacker name:</label>
+    <div class="col-sm-6">
+      {{input value=attackerName type="text" classNames="form-control" elementId="attackerName"}}
+    </div>
+  </div>
+{{/bootstrap-modal}}

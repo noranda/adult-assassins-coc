@@ -9,6 +9,14 @@ export default Ember.Component.extend ({
     return `position-${this.get('warPlayer.position')}`;
   }.property('warPlayer.position'),
 
+  placeholderText: function() {
+    if (this.get('warPlayer.friendly')) {
+      return "friend";
+    } else {
+      return "foe";
+    }
+  }.property('warPlayer.friendly'),
+
   actions: {
     savePlayer: function() {
       var warPlayer = this.get('warPlayer');
@@ -36,7 +44,7 @@ export default Ember.Component.extend ({
     },
 
     addAttacker: function() {
-      // var attacker = this.
+      this.sendAction('openModal', 'modals/attacker');
     }
   }
 });

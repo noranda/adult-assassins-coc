@@ -1,8 +1,8 @@
 <div>
   <h1>
-    <a href="#" {{bind-attr class=":our-clan :clan-name isViewingAttackers:active-clan"}} {{action 'viewClan' 'attackers'}}>Adult Assassins</a>
+    <span class="clan-name">Adult Assassins</span>
     <span class="small">vs </span>
-    <a href="#" {{bind-attr class=":opposing-clan :clan-name isViewingTargets:active-clan"}} {{action 'viewClan' 'targets'}}>{{currentWar.opposingClan.name}}</a>
+    <span class="clan-name">{{currentWar.opposingClan.name}}</span>
   </h1>
 
   <div class="timer">
@@ -20,7 +20,7 @@
 
   <div class="container current-war">
     {{#each target in targetList}}
-      {{war-player-row warPlayer=target}}
+      {{war-player-row warPlayer=target openModal='openModal'}}
     {{/each}}
 
 {{!--     <div class="row">
