@@ -22,13 +22,22 @@
 .current-war {
   font-size: 1.1em;
 
-  .opposing-clan {
-    color: $brand-primary;
-    // text-shadow:
-    //   2px -2px 0 $brand-yellow,
-    //   2px -2px 0 $brand-yellow,
-    //   -2px 2px 0 $brand-yellow,
-    //   2px 2px 0  $brand-yellow;
+  a.clan-name {
+    color: $brand-secondary;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: none;
+    }
+
+    &.active-clan {
+      color: $brand-primary;
+      // text-shadow:
+      //   2px -2px 0 $brand-yellow,
+      //   2px -2px 0 $brand-yellow,
+      //   -2px 2px 0 $brand-yellow,
+      //   2px 2px 0  $brand-yellow;
+    }
   }
 
   .war-player-row {

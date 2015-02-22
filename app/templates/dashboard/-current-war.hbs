@@ -1,8 +1,8 @@
 <div>
   <h1>
-    <span class="our-clan" {{action 'viewOurClan'}}>Adult Assassins</span>
+    <a href="#" {{bind-attr class=":our-clan :clan-name isViewingAttackers:active-clan"}} {{action 'viewClan' 'attackers'}}>Adult Assassins</a>
     <span class="small">vs </span>
-    <span class="opposing-clan" {{action 'viewOpposingClan'}}>{{currentWar.opposingClan.name}}</span>
+    <a href="#" {{bind-attr class=":opposing-clan :clan-name isViewingTargets:active-clan"}} {{action 'viewClan' 'targets'}}>{{currentWar.opposingClan.name}}</a>
   </h1>
 
   <div class="timer">

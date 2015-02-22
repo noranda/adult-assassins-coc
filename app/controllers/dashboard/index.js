@@ -1,13 +1,49 @@
 import Ember from 'ember';
 
+function generateTargetList(friendly) {
+  return function() {
+    var size = this.get('currentWar.warSize');
+    var players;
+    var currentWar = this.get('currentWar');
+    var sortedTargets = [];
+    var target;
+    var player;
+
+    if (friendly) {
+      players = this.get('warAttackers');
+    } else {
+      players = this.get('warTargets');
+    }
+
+    for (var i = 1; i <= size; i++) {
+      target = players.findBy('position', i);
+      if (Ember.isNone(target)) {
+        player = this.get('store').createRecord('player');
+        target = this.get('store').createRecord('war-player', { position: i, friendly: friendly, player: player });
+        target.set('war', currentWar);
+      }
+
+      sortedTargets.push(target);
+    }
+
+    return sortedTargets;
+  };
+}
+
 export default Ember.Controller.extend({
   needs: ['application'],
   currentUser: Ember.computed.oneWay('controllers.application.currentUser'),
 
+  queryParams: [{ displayBy: 'display-by' }],
+
   wars: Ember.computed.oneWay('model.wars'),
 
+  displayBy: 'targets',
   warTargets: Ember.computed.filterBy('currentWar.warPlayers', 'friendly', false),
   warAttackers: Ember.computed.filterBy('currentWar.warPlayers', 'friendly', true),
+
+  isViewingTargets: Ember.computed.equal('displayBy', 'targets'),
+  isViewingAttackers: Ember.computed.not('isViewingTargets'),
 
   currentWar: function() {
     var wars = this.get('wars');
@@ -24,27 +60,17 @@ export default Ember.Controller.extend({
     }
   }.property('currentTimer'),
 
+  opponentTargetList: generateTargetList(false).property('currentWar', 'currentWar.warSize'),
+  attackerTargetList: generateTargetList(true).property('currentWar', 'currentWar.warSize'),
+
   targetList: function() {
-    var size = this.get('currentWar.warSize');
-    var targets = this.get('warTargets');
-    var currentWar = this.get('currentWar');
-    var sortedTargets = [];
-    var target;
-    var player;
-
-    for (var i = 1; i <= size; i++) {
-      target = targets.findBy('position', i);
-      if (Ember.isNone(target)) {
-        player = this.get('store').createRecord('player');
-        target = this.get('store').createRecord('war-player', { position: i, friendly: false, player: player });
-        target.set('war', currentWar);
-      }
-
-      sortedTargets.push(target);
+    var displayBy = this.get('displayBy');
+    if (displayBy === 'targets') {
+      return this.get('opponentTargetList');
+    } else {
+      return this.get('attackerTargetList');
     }
-
-    return sortedTargets;
-  }.property('currentWar', 'currentWar.warSize'),
+  }.property('displayBy'),
 
   isInWar: function() {
     return Ember.getWithDefault(this, 'currentWar.isOngoing', false);
@@ -80,12 +106,8 @@ export default Ember.Controller.extend({
       }
     },
 
-    viewOurClan: function() {
-
-    },
-
-    viewOpposingClan: function() {
-
+    viewClan: function(clanType) {
+      this.set('displayBy', clanType);
     }
   }
 });
