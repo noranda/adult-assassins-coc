@@ -37,6 +37,10 @@ app.import("bower_components/moment/moment.js");
 app.import("bower_components/spin.js/spin.js");
 app.import("bower_components/spin.js/jquery.spin.js");
 
+// noty, a notification widget
+app.import("bower_components/noty/js/noty/packaged/jquery.noty.packaged.js");
+app.import("vendor/noty_defaults.js");
+
 var bootstrapFonts = pickFiles('bower_components/bootstrap-sass-official/assets/fonts/bootstrap', {
   srcDir: '/',
   destDir: '/assets/bootstrap'

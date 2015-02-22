@@ -1,1 +1,8 @@
-{{clock}}
+<i class="fa fa-clock-o"></i> {{clock}}
+{{#if war}}
+  {{#if war.isPreparing}}
+    until war starts
+  {{else}}
+    until war ends
+  {{/if}}
+{{/if}}

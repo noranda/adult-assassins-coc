@@ -22,11 +22,11 @@
 .current-war {
   font-size: 1.1em;
 
-  .light-row, .dark-row {
+  .war-player-row {
     border-top: 1px solid #ddd;
   }
 
-  .dark-row {
+  .war-player-row:nth-child(odd) {
     background-color: #f9f9f9;
   }
 
@@ -38,17 +38,19 @@
   .target {
     text-align: left;
     line-height: 50px;
+    font-family: clash, Arial, Helvetica, sans-serif;
+    font-size: 1.2em;
 
     .target-number {
-      font-size: 1.5em;
       font-weight: 500;
       padding-right: 10px;
     }
 
     .target-name {
-      font-family: clash, Arial, Helvetica, sans-serif;
       color: $brand-primary;
-      font-size: 1.2em;
+      background-color: transparent;
+      border: none;
+      box-shadow: none;
     }
   }
 

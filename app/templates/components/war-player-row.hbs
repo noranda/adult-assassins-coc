@@ -1,0 +1,22 @@
+<div class="col-sm-1 stars">
+
+</div>
+<div class="col-sm-4 target">
+  <form class="form-inline">
+    <div class="form-group">
+      <div class="row">
+        <div class="col-sm-2">
+          <label {{bind-attr for="formElementId"}} class="target-number">{{warPlayer.position}}. </label>
+        </div>
+        <div class="col-sm-10">
+          {{input type="text" class="form-control target-name" value=warPlayer.player.name elementId=formElementId placeholder="Target Player" focus-out="savePlayer"}}
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+<div class="col-sm-2 attacker">
+  <span class="player-name"></span>
+  <br/>
+
+</div>

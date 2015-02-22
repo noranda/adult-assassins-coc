@@ -1,13 +1,8 @@
 <div>
-  <h1>Adult Assassins <span class="small">vs</span> Alee Utoo</h1>
+  <h1>Adult Assassins <span class="small">vs </span>{{currentWar.opposingClan.name}}</h1>
 
   <div class="timer">
-    <i class="fa fa-clock-o"></i>
-    {{#if currentWarTimer}}
-      {{displayTimer}}
-    {{else}}
-      enter timer
-    {{/if}}
+    {{countdown-timer war=currentWar to=currentWar.endDate}}
     {{#if warEnded}}
       {{warResult}}
     {{/if}}
@@ -20,7 +15,11 @@
   </div>
 
   <div class="container current-war">
-    <div class="row dark-row">
+    {{#each target in targetList}}
+      {{war-player-row warPlayer=target}}
+    {{/each}}
+
+{{!--     <div class="row">
       <div class="col-sm-1 stars">
         <i class="fa fa-star"></i>
         <i class="fa fa-star"></i>
@@ -39,7 +38,7 @@
       </div>
     </div>
 
-    <div class="row light-row">
+    <div class="row">
       <div class="col-sm-1 stars">
         <i class="fa fa-star"></i>
         <i class="fa fa-star"></i>
@@ -58,7 +57,7 @@
       </div>
     </div>
 
-    <div class="row dark-row">
+    <div class="row">
       <div class="col-sm-1 stars">
         <i class="fa fa-star"></i>
         <i class="fa fa-star-o"></i>
@@ -96,6 +95,6 @@
         <i class="fa fa-star-o"></i>
         <i class="fa fa-star-o"></i>
       </div>
-    </div>
+    </div> --}}
   </div>
 </div>

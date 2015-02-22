@@ -4,7 +4,13 @@ var { moment } = window;
 
 export default DS.Model.extend({
   startDate: DS.attr('date'),
+  warSize: DS.attr('number'),
   opposingClan: DS.belongsTo('clan'),
+  warPlayers: DS.hasMany('war-player'),
+
+  endDate: function() {
+    return moment(this.get('startDate')).add(2, 'days');
+  }.property('startDate'),
 
   isOngoing: function() {
     var startDate = moment(this.get('startDate'));
@@ -24,10 +30,9 @@ export default DS.Model.extend({
   isWarring: function() {
     var startDate = moment(this.get('startDate'));
     var warStartDate = moment(startDate).add(1, 'days');
-    var endDate = moment(startDate).add(2, 'days');
     var now = moment();
 
-    return (now.isAfter(warStartDate) || now.isSame(warStartDate)) && now.isBefore(endDate);
+    return (now.isAfter(warStartDate) || now.isSame(warStartDate)) && now.isBefore(this.get('endDate'));
   }.property('startDate', 'isFinished'),
 
   isFinished: function() {

@@ -15,6 +15,7 @@ function zeroIt(str) {
 export default Ember.Component.extend({
   to: null,
   clock: null,
+  war: null,
 
   _initTimer: function() {
     if (this._timer) {
@@ -34,7 +35,7 @@ export default Ember.Component.extend({
     var now = moment();
     var diff = moment(endDate).diff(now);
     var duration = moment.duration(diff, 'milliseconds');
-    var clock = `${zeroIt(duration.hours())}:${zeroIt(duration.minutes())}:${zeroIt(duration.seconds())}`;
+    var clock = `${zeroIt(duration.hours())}h ${zeroIt(duration.minutes())}m`;
 
     this.set('clock', clock);
 

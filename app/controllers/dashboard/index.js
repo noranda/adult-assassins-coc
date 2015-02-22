@@ -6,6 +6,14 @@ export default Ember.Controller.extend({
 
   wars: Ember.computed.oneWay('model.wars'),
 
+  warTargets: Ember.computed.filterBy('currentWar.warPlayers', 'friendly', false),
+  warAttackers: Ember.computed.filterBy('currentWar.warPlayers', 'friendly', true),
+
+  currentWar: function() {
+    var wars = this.get('wars');
+    return wars.sortBy('startDate')[0];
+  }.property('wars.[]'),
+
   currentTimer: Ember.computed.oneWay('model.timers.firstObject'),
 
   warText: function() {
@@ -16,10 +24,27 @@ export default Ember.Controller.extend({
     }
   }.property('currentTimer'),
 
-  currentWar: function() {
-    var wars = this.get('wars');
-    return wars.sortBy('startDate')[0];
-  }.property('wars.[]'),
+  targetList: function() {
+    var size = this.get('currentWar.warSize');
+    var targets = this.get('warTargets');
+    var currentWar = this.get('currentWar');
+    var sortedTargets = [];
+    var target;
+    var player;
+
+    for (var i = 1; i <= size; i++) {
+      target = targets.findBy('position', i);
+      if (Ember.isNone(target)) {
+        player = this.get('store').createRecord('player');
+        target = this.get('store').createRecord('war-player', { position: i, friendly: false, player: player });
+        target.set('war', currentWar);
+      }
+
+      sortedTargets.push(target);
+    }
+
+    return sortedTargets;
+  }.property('warTargets.length', 'currentWar.warSize'),
 
   isInWar: function() {
     return Ember.getWithDefault(this, 'currentWar.isOngoing', false);
@@ -33,38 +58,11 @@ export default Ember.Controller.extend({
     return (this.get('warEnded') ? this.get('aaScore') > this.get('opScore') ? 'Victory' : this.get('aaScore') === this.get('opScore') ? 'Tie' : 'Defeat' : null);
   }.property('warEnded'),
 
-  // runTimer: function() {
-  //   return Ember.run.later(this, function() {
-  //     var difference;
-  //     difference = moment().diff(this.get('endTime'));
-  //     this.set('currentWarTimer', this.get('currentWarTimer') - difference);
-  //     if (this.get('currentWarTimer') <= 0) {
-  //       this.set('currentWarTimer', null);
-  //       return this.set('warEnded', true);
-  //     }
-  //     // } else {
-  //     //   // return runTimer();
-  //     // }
-  //   }, 1000);
-  // },
-
   displayTimer: (function() {
     return `${this.get('currentWarTimer').format('H')} hours ${this.get('currentWarTimer').format('m')} minutes`;
   }).property('currentWarTimer'),
 
   actions: {
-    // setTimer: function(warObj, hours, minutes) {
-    //   var currentTime;
-    //   var currentWarTimer;
-    //   var endTime;
-
-    //   currentTime = moment();
-    //   endTime = currentTime.add(hours, 'h').add(minutes, 'm');
-    //   currentWarTimer = endTime - currentTime;
-    //   warObj.endTime.save();
-    //   // return runTimer();
-    // },
-
     declareWar: function() {
       this.get('controllers.application').send('openModal', 'modals/declare-war');
     },
